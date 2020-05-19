@@ -28,10 +28,10 @@ and limitations under the License
                         >
 
 //! Web view created for showRemoteSite.
-@property (nonatomic) UIWebView* remoteSiteWebView;
+//@property (nonatomic) UIWebView* remoteSiteWebView;
 
 //! Close button for showRemoteSite web view.
-@property (nonatomic) UIButton* remoteSiteCloseButton;
+//@property (nonatomic) UIButton* remoteSiteCloseButton;
 
 //! When posting an alert to tell the user that an app is not installed, this
 //! will be the URL to acess that app in the App Store,
@@ -57,8 +57,8 @@ and limitations under the License
 
 - (void)dealloc
 {
-    [self.remoteSiteCloseButton removeFromSuperview];
-    [self.remoteSiteWebView removeFromSuperview];
+    //[self.remoteSiteCloseButton removeFromSuperview];
+    //[self.remoteSiteWebView removeFromSuperview];
 }
 
 
@@ -497,29 +497,8 @@ didFinishWithResult:(MessageComposeResult)result
 closeButtonRectP:(CGRect)closeButtonRectP    // Portrait
 closeButtonRectL:(CGRect)closeButtonRectL    // Landscape
 {
-    if (url.length == 0) return;
-    NSString* closeButtonFilePath = [[NSBundle mainBundle] pathForResource:@"remote_close"
-                                                                    ofType:@"png"];
-    UIImage* closeButtonImage = [UIImage imageWithContentsOfFile:closeButtonFilePath];
-	
-	self.remoteSiteCloseButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	self.remoteSiteCloseButton.frame =
-    UIInterfaceOrientationIsPortrait(self.viewController.interfaceOrientation) ?
-    closeButtonRectP : closeButtonRectL;
-	[self.remoteSiteCloseButton setTitle:@"" forState:UIControlStateNormal];
-	[self.remoteSiteCloseButton addTarget:self
-                                   action:@selector(onRemoteClose:)
-                         forControlEvents:UIControlEventTouchUpInside];
-	[self.remoteSiteCloseButton setImage:closeButtonImage forState:UIControlStateNormal];
-    
-    UIView* rootView = self.viewController.view;
-    self.remoteSiteWebView = [[UIWebView alloc] initWithFrame:rootView.bounds];
-	NSURLRequest *remoteRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]
-                                                   cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                               timeoutInterval:20.0];
-	[self.remoteSiteWebView loadRequest:remoteRequest];
-    [rootView addSubview:self.remoteSiteWebView];
-    [rootView addSubview:self.remoteSiteCloseButton];
+    return;
+    // tolto tutto
 }
 
 
@@ -537,11 +516,11 @@ closeButtonRectL:(CGRect)closeButtonRectL    // Landscape
 
 - (void) closeRemoteSite
 {
-    if (self.remoteSiteWebView) {
-        [self.remoteSiteCloseButton removeFromSuperview];
-        [self.remoteSiteWebView removeFromSuperview];
-        [self fireEvent:@"device.remote.close" success:YES components:nil];
-    }
+  //  if (self.remoteSiteWebView) {
+  //      [self.remoteSiteCloseButton removeFromSuperview];
+  //      [self.remoteSiteWebView removeFromSuperview];
+  //      [self fireEvent:@"device.remote.close" success:YES components:nil];
+  //  }
 }
 
 
