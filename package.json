@@ -1,0 +1,45 @@
+{
+  "author": {},
+  "bugs": {},
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-intel-xdk-device",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "Intel XDK Device",
+  "devDependencies": {},
+  "engines": {
+    "cordovaDependencies": {
+      "3.0.0": {
+        "cordova-android": ">=6.3.0"
+      },
+      "4.1.0": {
+        "cordova": ">=7.1.0",
+        "cordova-android": ">=6.3.0"
+      },
+      "5.0.0": {
+        "cordova": ">100"
+      }
+    }
+  },
+  "homepage": "https://github.com/intel/cordova-plugin-intel-xdk-device",
+  "keywords": [
+    "cordova",
+    "intel",
+    "xdk",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "Apache-2.0",
+  "name": "cordova-plugin-intel-xdk-device",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intel/cordova-plugin-intel-xdk-device"
+  },
+  "scripts": {},
+  "version": "3.0.1"
+}
